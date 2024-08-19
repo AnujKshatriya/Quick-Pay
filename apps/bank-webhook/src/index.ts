@@ -1,8 +1,9 @@
-import express from "express";
+import express, { urlencoded } from "express";
 import db from "@repo/db/client";
 const app = express();
 
 app.use(express.json())
+app.use(express.urlencoded({extended:true}))
 
 app.post("/hdfcWebhook", async (req, res) => {
     //TODO: Add zod validation here?
@@ -16,7 +17,7 @@ app.post("/hdfcWebhook", async (req, res) => {
         userId: req.body.user_identifier,
         amount: req.body.amount
     };
-
+    console.log(paymentInformation);
     try {
         await db.$transaction([
             db.balance.updateMany({
