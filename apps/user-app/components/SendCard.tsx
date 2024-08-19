@@ -10,10 +10,10 @@ export function SendCard() {
     const [number, setNumber] = useState("");
     const [amount, setAmount] = useState("");
 
-    return <div className="h-[90vh]">
+    return <div className="h-[60vh] ">
         <Center>
-            <Card title="Send">
-                <div className="min-w-72 pt-2">
+            <Card title="Enter Detail to Send Money">
+                <div className="w-[40vw] pt-2">
                     <TextInput placeholder={"Number"} label="Number" onChange={(value) => {
                         setNumber(value)
                     }} />
