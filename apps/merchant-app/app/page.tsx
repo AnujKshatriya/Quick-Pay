@@ -1,6 +1,7 @@
 
 export default function() {
   return <div>
-    hi there
+
+    hi there, Hello World
   </div>
 }
